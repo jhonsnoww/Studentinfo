@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="studentinfo.mainController">
+   <children>
+      <BorderPane prefHeight="600.0" prefWidth="800.0" stylesheets="@stylesheed.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <left>
+            <VBox alignment="TOP_CENTER" prefHeight="600.0" prefWidth="199.0" spacing="10.0" styleClass="menu-bg" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="40.0" prefHeight="70.0" prefWidth="180.0" styleClass="main_bg">
+                     <children>
+                        <Label text="Admin Panal" textFill="#0d0000">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="40.0" prefWidth="199.0">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/home.png" />
+                           </image>
+                        </ImageView>
+                        <JFXButton id="homeBtn" onAction="#homeBtn" prefHeight="25.0" prefWidth="79.0" text="Home" textFill="#0d010d">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="40.0" prefHeight="40.0" prefWidth="199.0">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/student.png" />
+                           </image>
+                        </ImageView>
+                        <JFXButton id="addStudent" onAction="#addStudent" text="Add Student" textFill="#0d010d" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="40.0" prefHeight="40.0" prefWidth="199.0">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/teacher.png" />
+                           </image>
+                        </ImageView>
+                        <JFXButton onAction="#addTeacher" text="Add Teacher" textFill="#0d010d" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="95.0" prefHeight="40.0" prefWidth="199.0">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/student_list.png" />
+                           </image>
+                        </ImageView>
+                        <JFXButton onAction="#studentList" text="Student List" textFill="#0d010d" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="150.0" prefHeight="40.0" prefWidth="199.0">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/teacher_list.png" />
+                           </image>
+                        </ImageView>
+                        <JFXButton onAction="#teacherList" text="Teacher List" textFill="#0d010d" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="260.0" prefHeight="40.0" prefWidth="199.0">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/setting.png" />
+                           </image>
+                        </ImageView>
+                        <JFXButton onAction="#settingBtn" text="Setting" textFill="#0d010d" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </left>
+         <center>
+            <StackPane fx:id="centerPane" prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox fx:id="homeView" alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <VBox alignment="CENTER" spacing="20.0">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="38.0" prefWidth="160.0" styleClass="menu-bg">
+                                 <children>
+                                    <Text fx:id="totalTeacherId" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Teachers" wrappingWidth="159.13671875">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </Text>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" layoutX="10.0" layoutY="281.0" prefHeight="38.0" prefWidth="160.0" styleClass="menu-bg">
+                                 <children>
+                                    <Text fx:id="totalStudentId" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Students" wrappingWidth="159.13671875">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </Text>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </StackPane>
+         </center>
+         <top>
+            <HBox prefHeight="20.0" styleClass="menu-bg" stylesheets="@stylesheed.css" BorderPane.alignment="CENTER" />
+         </top>
+         <right>
+            <HBox prefWidth="20.0" styleClass="menu-bg" stylesheets="@stylesheed.css" BorderPane.alignment="CENTER" />
+         </right>
+         <bottom>
+            <HBox prefHeight="20.0" styleClass="menu-bg" stylesheets="@stylesheed.css" BorderPane.alignment="CENTER" />
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>
