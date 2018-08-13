@@ -102,4 +102,28 @@ public class StudentinfoDao {
         stmt.execute();
     }
 
+    public Student searchStudentInfo(String studentId) throws SQLException {
+
+        Connection con = Database.getInstance().getConnection();
+
+        String sql = "select * from studentinfo.studentinfo where id=?";
+        PreparedStatement stmt = con.prepareStatement(sql);
+        stmt.setString(1, studentId);
+        ResultSet rs = stmt.executeQuery();
+
+        Student student = null;
+
+        if (rs.next()) {
+
+            String name = rs.getString("name");
+            String roll = rs.getString("roll");
+            String mobile = rs.getString("mobile");
+            String address = rs.getString("address");
+
+            student = new Student(studentId, name, roll, mobile, address);
+        }
+
+        return student;
+    }
+
 }

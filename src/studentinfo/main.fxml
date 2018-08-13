@@ -98,6 +98,16 @@
                         <JFXButton onAction="#settingBtn" text="Setting" textFill="#0d010d" />
                      </children>
                   </HBox>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="360.0" prefHeight="40.0" prefWidth="199.0">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/search.png" />
+                           </image>
+                        </ImageView>
+                        <JFXButton onAction="#searchInfo" text="Searcch" textFill="#0d010d" />
+                     </children>
+                  </HBox>
                </children>
             </VBox>
          </left>
@@ -113,23 +123,32 @@
                            <children>
                               <HBox alignment="CENTER" prefHeight="38.0" prefWidth="160.0" styleClass="menu-bg">
                                  <children>
-                                    <Text fx:id="totalTeacherId" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Teachers" wrappingWidth="159.13671875">
+                                    <Text fx:id="totalTeacherId" onMouseClicked="#teacherList" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Teachers" wrappingWidth="162.13671875">
                                        <HBox.margin>
                                           <Insets left="10.0" />
                                        </HBox.margin>
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
                                     </Text>
                                  </children>
                               </HBox>
                               <HBox alignment="CENTER" layoutX="10.0" layoutY="281.0" prefHeight="38.0" prefWidth="160.0" styleClass="menu-bg">
                                  <children>
-                                    <Text fx:id="totalStudentId" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Students" wrappingWidth="159.13671875">
+                                    <Text fx:id="totalStudentId" onMouseClicked="#studentList" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Students" wrappingWidth="159.13671875">
                                        <HBox.margin>
                                           <Insets left="10.0" />
                                        </HBox.margin>
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
                                     </Text>
                                  </children>
                               </HBox>
                            </children>
+                           <opaqueInsets>
+                              <Insets right="10.0" top="10.0" />
+                           </opaqueInsets>
                         </VBox>
                      </children>
                   </HBox>

@@ -25,7 +25,7 @@ public class TeacherinfoDao {
 
         Connection con = Database.getInstance().getConnection();
 
-        String sql = "insert into studentinfo.teacherinfo (id,name,roll,mobile,address)  value (?,?,?,?,?)";
+        String sql = "insert into studentinfo.teacherinfo (T_id,name,roll,mobile,address)  value (?,?,?,?,?)";
 
         PreparedStatement stmt = con.prepareStatement(sql);
 
@@ -70,7 +70,7 @@ public class TeacherinfoDao {
 
         while (rs.next()) {
 
-            String id = rs.getString("id");
+            String id = rs.getString("T_id");
             String name = rs.getString("name");
             String roll = rs.getString("roll");
             String mobile = rs.getString("mobile");
@@ -88,7 +88,7 @@ public class TeacherinfoDao {
        
         Connection con = Database.getInstance().getConnection();
         
-        String sql = "update studentinfo.teacherinfo set name=?, roll=?,mobile=?,address=? where id=?";
+        String sql = "update studentinfo.teacherinfo set name=?, roll=?,mobile=?,address=? where T_id=?";
         
         PreparedStatement stmt = con.prepareStatement(sql);
         stmt.setString(1, tinfo.getName());
@@ -104,13 +104,38 @@ public class TeacherinfoDao {
 
         Connection con = Database.getInstance().getConnection();
         
-        String sql = "delete from studentinfo.teacherinfo where id=?";
+        String sql = "delete from studentinfo.teacherinfo where T_id=?";
         PreparedStatement stmt = con.prepareStatement(sql);
         stmt.setString(1, selectedTeacher.getId());
         stmt.execute();
         
                 
 
+    }
+    
+     public Teacherinfo searchTearchInfo(String teacherId) throws SQLException {
+        
+        Connection con = Database.getInstance().getConnection();
+        
+        String sql = "select * from studentinfo.teacherinfo where T_id=?";
+        PreparedStatement stmt = con.prepareStatement(sql);
+        stmt.setString(1, teacherId);
+       ResultSet rs = stmt.executeQuery();
+       
+       Teacherinfo tinfo = null;
+               
+               if(rs.next()){
+           
+           String name = rs.getString("name");
+           String roll = rs.getString("roll");
+           String mobile = rs.getString("mobile");
+           String adress = rs.getString("address");
+           
+           tinfo = new Teacherinfo(teacherId, name, roll, mobile, adress);
+           
+       }
+
+return tinfo;
     }
 
 }

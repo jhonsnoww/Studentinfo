@@ -40,7 +40,7 @@
                   </HBox>
                   <HBox layoutX="10.0" layoutY="210.0" prefHeight="51.0" prefWidth="261.0">
                      <children>
-                        <JFXTextField fx:id="teacherRoll" labelFloat="true" maxWidth="250.0" minWidth="250.0" prefHeight="31.0" prefWidth="250.0" promptText="Please Enter Roll" />
+                        <JFXTextField fx:id="teacherRoll" labelFloat="true" maxWidth="250.0" minWidth="250.0" prefHeight="31.0" prefWidth="250.0" promptText="Please Enter Position" />
                      </children>
                   </HBox>
                   <HBox layoutX="10.0" layoutY="261.0" prefHeight="51.0" prefWidth="261.0">

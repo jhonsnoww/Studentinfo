@@ -7,8 +7,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="350.0" prefWidth="300.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141" fx:controller="studentinfo.EditTeacher.EditTeacherController">
+<AnchorPane id="AnchorPane" prefHeight="350.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="studentinfo.EditTeacher.EditTeacherController">
    <children>
       <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="410.0" prefWidth="610.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -19,22 +18,22 @@
             </HBox>
             <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0">
                <children>
-                  <JFXTextField fx:id="edTName" maxWidth="204.0" minWidth="196.0" prefHeight="34.0" prefWidth="204.0" />
+                  <JFXTextField fx:id="edTName" maxWidth="204.0" minWidth="196.0" prefHeight="34.0" prefWidth="204.0" promptText="Enter Name" />
                </children>
             </HBox>
             <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0">
                <children>
-                  <JFXTextField fx:id="edTRoll" maxWidth="204.0" minWidth="196.0" prefHeight="34.0" prefWidth="204.0" />
+                  <JFXTextField fx:id="edTRoll" maxWidth="204.0" minWidth="196.0" prefHeight="34.0" prefWidth="204.0" promptText="Enter Position" />
                </children>
             </HBox>
             <HBox alignment="CENTER" layoutX="10.0" layoutY="44.0">
                <children>
-                  <JFXTextField fx:id="edTMobile" maxWidth="204.0" minWidth="196.0" prefHeight="34.0" prefWidth="204.0" />
+                  <JFXTextField fx:id="edTMobile" maxWidth="204.0" minWidth="196.0" prefHeight="34.0" prefWidth="204.0" promptText="Enter Mobile No" />
                </children>
             </HBox>
             <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0">
                <children>
-                  <JFXTextField fx:id="edAddress" maxWidth="204.0" minWidth="196.0" prefHeight="34.0" prefWidth="204.0" />
+                  <JFXTextField fx:id="edAddress" maxWidth="204.0" minWidth="196.0" prefHeight="34.0" prefWidth="204.0" promptText="Enter Address" />
                </children>
             </HBox>
             <HBox alignment="CENTER" layoutX="10.0" layoutY="261.0" spacing="20.0">

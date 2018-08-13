@@ -65,7 +65,7 @@ public class Database {
         Statement stmt2 = con.createStatement();
 
         stmt1.execute("create table if not exists studentinfo.studentinfo (id varchar(44) primary key,name varchar(224),roll varchar(224),mobile varchar(224),address varchar(224))");
-        stmt2.execute("create table if not exists studentinfo.teacherinfo (id varchar(44) primary key,name varchar(224),roll varchar(224),mobile varchar(224),address varchar(224))");
+        stmt2.execute("create table if not exists studentinfo.teacherinfo (T_id varchar(44) primary key,name varchar(224),roll varchar(224),mobile varchar(224),address varchar(224))");
 
         System.out.println("Create table Success");
 

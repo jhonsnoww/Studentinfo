@@ -7,14 +7,13 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141" fx:controller="studentinfo.teacherLIst.TeacherListController">
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="studentinfo.teacherLIst.TeacherListController">
    <children>
       <TableView fx:id="tTableView" layoutX="10.0" layoutY="10.0" prefHeight="610.0" prefWidth="610.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <columns>
             <TableColumn fx:id="tId" maxWidth="3000.0" prefWidth="75.0" text="Id" />
             <TableColumn fx:id="tName" prefWidth="75.0" text="Name" />
-            <TableColumn fx:id="tRoll" prefWidth="75.0" text="Roll" />
+            <TableColumn fx:id="tRoll" prefWidth="75.0" text="Position" />
             <TableColumn fx:id="tMobile" prefWidth="75.0" text="Mobile" />
             <TableColumn fx:id="tAddress" prefWidth="75.0" text="Address" />
          </columns>
