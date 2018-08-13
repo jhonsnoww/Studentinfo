@@ -156,10 +156,12 @@ public class mainController implements Initializable {
 
     }
 
-    @FXML
-    private void teacherList(MouseEvent event) {
+   
 
-        totalTeacherId.setOnMouseClicked(new EventHandler<MouseEvent>() {
+    @FXML
+    private void totalTeacherList(MouseEvent event) {
+        
+         totalTeacherId.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
                 if (event.getButton().equals(MouseButton.PRIMARY) && event.getClickCount() == 2) {
@@ -175,13 +177,11 @@ public class mainController implements Initializable {
                 }
             }
         });
-
     }
 
     @FXML
-    private void studentList(MouseEvent event) {
-
-        totalStudentId.setOnMouseClicked(new EventHandler<MouseEvent>() {
+    private void totalStudentList(MouseEvent event) {
+          totalStudentId.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
                 if (event.getButton().equals(MouseButton.PRIMARY) && event.getClickCount() == 2) {
@@ -196,7 +196,6 @@ public class mainController implements Initializable {
                 }
             }
         });
-
     }
 
 }

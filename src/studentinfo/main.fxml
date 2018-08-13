@@ -123,7 +123,7 @@
                            <children>
                               <HBox alignment="CENTER" prefHeight="38.0" prefWidth="160.0" styleClass="menu-bg">
                                  <children>
-                                    <Text fx:id="totalTeacherId" onMouseClicked="#teacherList" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Teachers" wrappingWidth="162.13671875">
+                                    <Text fx:id="totalTeacherId" onMouseClicked="#totalTeacherList" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Teachers" wrappingWidth="162.13671875">
                                        <HBox.margin>
                                           <Insets left="10.0" />
                                        </HBox.margin>
@@ -135,7 +135,7 @@
                               </HBox>
                               <HBox alignment="CENTER" layoutX="10.0" layoutY="281.0" prefHeight="38.0" prefWidth="160.0" styleClass="menu-bg">
                                  <children>
-                                    <Text fx:id="totalStudentId" onMouseClicked="#studentList" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Students" wrappingWidth="159.13671875">
+                                    <Text fx:id="totalStudentId" onMouseClicked="#totalStudentList" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Students" wrappingWidth="159.13671875">
                                        <HBox.margin>
                                           <Insets left="10.0" />
                                        </HBox.margin>
