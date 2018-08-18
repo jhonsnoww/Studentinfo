@@ -11,9 +11,12 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ComboBox;
 import studentinfo.Dao.StudentinfoDao;
 import studentinfo.Messages.Messages;
 import studentinfo.Model.Student;
@@ -32,10 +35,17 @@ public class AddstudentController implements Initializable {
     private JFXTextField StudentAddress;
 
     private StudentinfoDao sdao;
+    @FXML
+    private ComboBox<String> comboBox;
+    
+    ObservableList<String> list = FXCollections.observableArrayList("6-BE","5-BE","4-BE","3-BE","2-BE","1-BE");
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         sdao = new StudentinfoDao();
+        comboBox.setValue("6-BE");
+        comboBox.setItems(list);
+        studentRoll.setText(comboBox.getSelectionModel().getSelectedItem());
 
     }
 
@@ -65,6 +75,11 @@ public class AddstudentController implements Initializable {
             }
         }
 
+    }
+
+    @FXML
+    private void chooseBox(ActionEvent event) {
+        studentRoll.setText(comboBox.getSelectionModel().getSelectedItem());
     }
 
 }

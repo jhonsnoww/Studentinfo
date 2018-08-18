@@ -30,11 +30,11 @@ public class StudentinfoDao {
 
     }
 
-    public Integer totalStudent() throws SQLException {
+    public Integer totalStudent(String str) throws SQLException {
 
         Connection con = Database.getInstance().getConnection();
-
-        String sql = "select Count(*) From studentinfo.studentinfo";
+       
+        String sql = "select Count(*) From studentinfo.studentinfo where roll="+str;
 
         Statement stmt = con.createStatement();
 
@@ -124,6 +124,171 @@ public class StudentinfoDao {
         }
 
         return student;
+    }
+
+    public ObservableList<Student> getSixBEStudents() throws SQLException {
+        
+         Connection con = Database.getInstance().getConnection();
+
+        String sql = "select * from studentinfo.studentinfo where roll="+"\"6-BE\"";
+
+        Statement stmt = con.createStatement();
+
+        ResultSet rs = stmt.executeQuery(sql);
+
+        ObservableList<Student> list = FXCollections.observableArrayList();
+
+        while (rs.next()) {
+            String id = rs.getString("id");
+            String name = rs.getString("name");
+            String roll = rs.getString("roll");
+            String mobile = rs.getString("mobile");
+            String address = rs.getString("address");
+
+            Student student = new Student(id, name, roll, mobile, address);
+            list.add(student);
+
+        }
+
+        return list;
+        
+    }
+     public ObservableList<Student> getFiveBEStudents() throws SQLException {
+        
+         Connection con = Database.getInstance().getConnection();
+
+        String sql = "select * from studentinfo.studentinfo where roll="+"\"5-BE\"";
+
+        Statement stmt = con.createStatement();
+
+        ResultSet rs = stmt.executeQuery(sql);
+
+        ObservableList<Student> list = FXCollections.observableArrayList();
+
+        while (rs.next()) {
+            String id = rs.getString("id");
+            String name = rs.getString("name");
+            String roll = rs.getString("roll");
+            String mobile = rs.getString("mobile");
+            String address = rs.getString("address");
+
+            Student student = new Student(id, name, roll, mobile, address);
+            list.add(student);
+
+        }
+
+        return list;
+        
+    }
+      public ObservableList<Student> getFourBEStudents() throws SQLException {
+        
+         Connection con = Database.getInstance().getConnection();
+
+        String sql = "select * from studentinfo.studentinfo where roll="+"\"4-BE\"";
+
+        Statement stmt = con.createStatement();
+
+        ResultSet rs = stmt.executeQuery(sql);
+
+        ObservableList<Student> list = FXCollections.observableArrayList();
+
+        while (rs.next()) {
+            String id = rs.getString("id");
+            String name = rs.getString("name");
+            String roll = rs.getString("roll");
+            String mobile = rs.getString("mobile");
+            String address = rs.getString("address");
+
+            Student student = new Student(id, name, roll, mobile, address);
+            list.add(student);
+
+        }
+
+        return list;
+        
+    }
+      
+       public ObservableList<Student> getthreeBEStudents() throws SQLException {
+        
+         Connection con = Database.getInstance().getConnection();
+
+        String sql = "select * from studentinfo.studentinfo where roll="+"\"3-BE\"";
+
+        Statement stmt = con.createStatement();
+
+        ResultSet rs = stmt.executeQuery(sql);
+
+        ObservableList<Student> list = FXCollections.observableArrayList();
+
+        while (rs.next()) {
+            String id = rs.getString("id");
+            String name = rs.getString("name");
+            String roll = rs.getString("roll");
+            String mobile = rs.getString("mobile");
+            String address = rs.getString("address");
+
+            Student student = new Student(id, name, roll, mobile, address);
+            list.add(student);
+
+        }
+
+        return list;
+        
+    }
+       
+        public ObservableList<Student> getTwoBEStudents() throws SQLException {
+        
+         Connection con = Database.getInstance().getConnection();
+
+        String sql = "select * from studentinfo.studentinfo where roll="+"\"2-BE\"";
+
+        Statement stmt = con.createStatement();
+
+        ResultSet rs = stmt.executeQuery(sql);
+
+        ObservableList<Student> list = FXCollections.observableArrayList();
+
+        while (rs.next()) {
+            String id = rs.getString("id");
+            String name = rs.getString("name");
+            String roll = rs.getString("roll");
+            String mobile = rs.getString("mobile");
+            String address = rs.getString("address");
+
+            Student student = new Student(id, name, roll, mobile, address);
+            list.add(student);
+
+        }
+
+        return list;
+        
+    }
+         public ObservableList<Student> getOneBEStudents() throws SQLException {
+        
+         Connection con = Database.getInstance().getConnection();
+
+        String sql = "select * from studentinfo.studentinfo where roll="+"\"1-BE\"";
+
+        Statement stmt = con.createStatement();
+
+        ResultSet rs = stmt.executeQuery(sql);
+
+        ObservableList<Student> list = FXCollections.observableArrayList();
+
+        while (rs.next()) {
+            String id = rs.getString("id");
+            String name = rs.getString("name");
+            String roll = rs.getString("roll");
+            String mobile = rs.getString("mobile");
+            String address = rs.getString("address");
+
+            Student student = new Student(id, name, roll, mobile, address);
+            list.add(student);
+
+        }
+
+        return list;
+        
     }
 
 }

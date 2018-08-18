@@ -41,7 +41,7 @@
                               <Image url="@images/home.png" />
                            </image>
                         </ImageView>
-                        <JFXButton id="homeBtn" onAction="#homeBtn" prefHeight="25.0" prefWidth="79.0" text="Home" textFill="#0d010d">
+                        <JFXButton id="homeBtn" onAction="#homeBtn" prefHeight="25.0" prefWidth="120.0" text="Home" textFill="#0d010d">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
@@ -55,7 +55,10 @@
                               <Image url="@images/student.png" />
                            </image>
                         </ImageView>
-                        <JFXButton id="addStudent" onAction="#addStudent" text="Add Student" textFill="#0d010d" />
+                        <JFXButton id="addStudent" onAction="#addStudent" prefHeight="25.0" prefWidth="127.0" text="Add Student" textFill="#0d010d">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></JFXButton>
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" layoutX="10.0" layoutY="40.0" prefHeight="40.0" prefWidth="199.0">
@@ -65,27 +68,36 @@
                               <Image url="@images/teacher.png" />
                            </image>
                         </ImageView>
-                        <JFXButton onAction="#addTeacher" text="Add Teacher" textFill="#0d010d" />
+                        <JFXButton onAction="#addTeacher" prefHeight="25.0" prefWidth="123.0" text="Add Teacher" textFill="#0d010d">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></JFXButton>
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" layoutX="10.0" layoutY="95.0" prefHeight="40.0" prefWidth="199.0">
                      <children>
                         <ImageView fitHeight="30.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/student_list.png" />
+                              <Image url="@images/sList.png" />
                            </image>
                         </ImageView>
-                        <JFXButton onAction="#studentList" text="Student List" textFill="#0d010d" />
+                        <JFXButton onAction="#studentList" prefHeight="25.0" prefWidth="119.0" text="Student List" textFill="#0d010d">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></JFXButton>
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" layoutX="10.0" layoutY="150.0" prefHeight="40.0" prefWidth="199.0">
                      <children>
                         <ImageView fitHeight="30.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/teacher_list.png" />
+                              <Image url="@images/tList.png" />
                            </image>
                         </ImageView>
-                        <JFXButton onAction="#teacherList" text="Teacher List" textFill="#0d010d" />
+                        <JFXButton onAction="#teacherList" prefHeight="25.0" prefWidth="122.0" text="Teacher List" textFill="#0d010d">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></JFXButton>
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" layoutX="10.0" layoutY="260.0" prefHeight="40.0" prefWidth="199.0">
@@ -95,7 +107,10 @@
                               <Image url="@images/setting.png" />
                            </image>
                         </ImageView>
-                        <JFXButton onAction="#settingBtn" text="Setting" textFill="#0d010d" />
+                        <JFXButton onAction="#settingBtn" prefHeight="29.0" prefWidth="125.0" text="Setting" textFill="#0d010d">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font></JFXButton>
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" layoutX="10.0" layoutY="360.0" prefHeight="40.0" prefWidth="199.0">
@@ -105,7 +120,10 @@
                               <Image url="@images/search.png" />
                            </image>
                         </ImageView>
-                        <JFXButton onAction="#searchInfo" text="Searcch" textFill="#0d010d" />
+                        <JFXButton onAction="#searchInfo" prefHeight="25.0" prefWidth="120.0" text="Search" textFill="#0d010d">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></JFXButton>
                      </children>
                   </HBox>
                </children>
@@ -116,14 +134,31 @@
                <children>
                   <HBox fx:id="homeView" alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <VBox alignment="CENTER" spacing="20.0">
+                        <VBox alignment="CENTER" prefHeight="560.0" prefWidth="289.0" spacing="5.0">
                            <HBox.margin>
                               <Insets />
                            </HBox.margin>
                            <children>
-                              <HBox alignment="CENTER" prefHeight="38.0" prefWidth="160.0" styleClass="menu-bg">
+                              <HBox alignment="CENTER" blendMode="SRC_ATOP" prefHeight="38.0" prefWidth="160.0" styleClass="menu-bg">
                                  <children>
-                                    <Text fx:id="totalTeacherId" onMouseClicked="#totalTeacherList" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Teachers" wrappingWidth="162.13671875">
+                                    <Text fx:id="tID" fill="#7a48ee" onMouseClicked="#totalTeacherList" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Teachers" wrappingWidth="245.13671875">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fx:id="totalTeacherId" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="circle" text="0">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" layoutX="10.0" layoutY="281.0" prefHeight="38.0" prefWidth="160.0" styleClass="menu-bg">
+                                 <children>
+                                    <Text fx:id="sixBE" fill="#7a48ee" onMouseClicked="#totalStudentList" strokeType="OUTSIDE" strokeWidth="0.0" text="6-BE Students" textOrigin="CENTER" wrappingWidth="244.13671875">
                                        <HBox.margin>
                                           <Insets left="10.0" />
                                        </HBox.margin>
@@ -131,16 +166,94 @@
                                           <Font name="System Bold" size="14.0" />
                                        </font>
                                     </Text>
+                                    <Text fx:id="sixBeStudents" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Text>
                                  </children>
                               </HBox>
-                              <HBox alignment="CENTER" layoutX="10.0" layoutY="281.0" prefHeight="38.0" prefWidth="160.0" styleClass="menu-bg">
+                              <HBox alignment="CENTER" layoutX="10.0" layoutY="293.0" prefHeight="38.0" prefWidth="160.0" styleClass="menu-bg">
                                  <children>
-                                    <Text fx:id="totalStudentId" onMouseClicked="#totalStudentList" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Students" wrappingWidth="159.13671875">
+                                    <Text fx:id="fiveBE" fill="#7a48ee" onMouseClicked="#FiveBeStudentList" strokeType="OUTSIDE" strokeWidth="0.0" text="5-BE Students" textOrigin="CENTER" wrappingWidth="244.13671875">
                                        <HBox.margin>
                                           <Insets left="10.0" />
                                        </HBox.margin>
                                        <font>
                                           <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fx:id="fiveBeStudents" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" layoutX="10.0" layoutY="271.0" prefHeight="38.0" prefWidth="160.0" styleClass="menu-bg">
+                                 <children>
+                                    <Text fx:id="fourBE" fill="#7a48ee" onMouseClicked="#FourBeStudentList" strokeType="OUTSIDE" strokeWidth="0.0" text="4-BE Students" textOrigin="CENTER" wrappingWidth="244.13671875">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fx:id="fourBeStudents" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" layoutX="10.0" layoutY="250.0" prefHeight="38.0" prefWidth="160.0" styleClass="menu-bg">
+                                 <children>
+                                    <Text fx:id="threeBE" fill="#7a48ee" onMouseClicked="#threeBeStudentLIst" strokeType="OUTSIDE" strokeWidth="0.0" text="3-BE Students" textOrigin="CENTER" wrappingWidth="244.13671875">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fx:id="threeBeStudents" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" layoutX="10.0" layoutY="293.0" prefHeight="38.0" prefWidth="160.0" styleClass="menu-bg">
+                                 <children>
+                                    <Text fx:id="twoBE" fill="#7a48ee" onMouseClicked="#twoBeStudentList" strokeType="OUTSIDE" strokeWidth="0.0" text="2-BE Students" textOrigin="CENTER" wrappingWidth="244.13671875">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fx:id="twobeStudentsId" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" layoutX="10.0" layoutY="336.0" prefHeight="38.0" prefWidth="160.0" styleClass="menu-bg">
+                                 <children>
+                                    <Text fx:id="oneBE" fill="#7a48ee" onMouseClicked="#oneBeStudentList" strokeType="OUTSIDE" strokeWidth="0.0" text="1-BE Students" textOrigin="CENTER" wrappingWidth="244.13671875">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fx:id="onebeStudentsId" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
                                        </font>
                                     </Text>
                                  </children>

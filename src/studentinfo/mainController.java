@@ -5,7 +5,6 @@
  */
 package studentinfo;
 
-import com.jfoenix.controls.JFXTextField;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -13,7 +12,6 @@ import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -25,7 +23,11 @@ import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
+import javafx.scene.text.TextBoundsType;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import studentinfo.Dao.StudentinfoDao;
@@ -42,14 +44,40 @@ public class mainController implements Initializable {
     private StackPane centerPane;
     @FXML
     private HBox homeView;
-    @FXML
-    private Text totalTeacherId;
-    @FXML
-    private Text totalStudentId;
 
     private StudentinfoDao sdao;
 
     private TeacherinfoDao tdao;
+    @FXML
+    private Text totalTeacherId;
+    @FXML
+    private Text sixBeStudents;
+    @FXML
+    private Text fiveBeStudents;
+    @FXML
+    private Text fourBeStudents;
+    @FXML
+    private Text threeBeStudents;
+    @FXML
+    private Text twobeStudentsId;
+    @FXML
+    private Text onebeStudentsId;
+    @FXML
+    private Text tID;
+    @FXML
+    private Text sixBE;
+    @FXML
+    private Text fiveBE;
+    @FXML
+    private Text fourBE;
+    @FXML
+    private Text threeBE;
+    @FXML
+    private Text twoBE;
+    @FXML
+    private Text oneBE;
+    @FXML
+    private VBox cir1;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -126,13 +154,32 @@ public class mainController implements Initializable {
     }
 
     private void totalStudent() {
-        int i = 0;
+
+        int i6 = 0;
+        int i5 = 0;
+        int i4 = 0;
+        int i3 = 0;
+        int i2 = 0;
+        int i1 = 0;
+
         try {
-            i = sdao.totalStudent();
+            i6 = sdao.totalStudent("\"6-BE\"");
+            i5 = sdao.totalStudent("\"5-BE\"");
+            i4 = sdao.totalStudent("\"4-BE\"");
+            i3 = sdao.totalStudent("\"3-BE\"");
+            i2 = sdao.totalStudent("\"2-BE\"");
+            i1 = sdao.totalStudent("\"1-BE\"");
         } catch (SQLException ex) {
             Logger.getLogger(mainController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        totalStudentId.setText("Total Students ... " + i);
+
+       
+        sixBeStudents.setText("" + i6);
+        fiveBeStudents.setText("" + i5);
+        fourBeStudents.setText("" + i4);
+        threeBeStudents.setText("" + i3);
+        twobeStudentsId.setText("" + i2);
+        onebeStudentsId.setText("" + i1);
 
     }
 
@@ -143,7 +190,7 @@ public class mainController implements Initializable {
         } catch (SQLException ex) {
             Logger.getLogger(mainController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        totalTeacherId.setText("Total Teachers ... " + i);
+        totalTeacherId.setText("" + i);
 
     }
 
@@ -156,12 +203,10 @@ public class mainController implements Initializable {
 
     }
 
-   
-
     @FXML
     private void totalTeacherList(MouseEvent event) {
-        
-         totalTeacherId.setOnMouseClicked(new EventHandler<MouseEvent>() {
+
+        tID.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
                 if (event.getButton().equals(MouseButton.PRIMARY) && event.getClickCount() == 2) {
@@ -173,7 +218,7 @@ public class mainController implements Initializable {
                     } catch (IOException ex) {
                         ex.printStackTrace();
                     }
-                    
+
                 }
             }
         });
@@ -181,13 +226,108 @@ public class mainController implements Initializable {
 
     @FXML
     private void totalStudentList(MouseEvent event) {
-          totalStudentId.setOnMouseClicked(new EventHandler<MouseEvent>() {
+        sixBE.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
                 if (event.getButton().equals(MouseButton.PRIMARY) && event.getClickCount() == 2) {
                     Parent root = null;
                     try {
-                        root = FXMLLoader.load(mainController.this.getClass().getResource("/studentinfo/StudentList/studentList.fxml"));
+                        root = FXMLLoader.load(mainController.this.getClass().getResource("/studentinfo/SixBeList/SixBeStudentList.fxml"));
+                        centerPane.getChildren().clear();
+                        centerPane.getChildren().add(root);
+                    } catch (IOException ex) {
+                        Logger.getLogger(mainController.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+            }
+        });
+    }
+
+    @FXML
+    private void FiveBeStudentList(MouseEvent event) {
+        fiveBE.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                if (event.getButton().equals(MouseButton.PRIMARY) && event.getClickCount() == 2) {
+                    Parent root = null;
+                    try {
+                        root = FXMLLoader.load(mainController.this.getClass().getResource("/studentinfo/FiveBe/FiveBe.fxml"));
+                        centerPane.getChildren().clear();
+                        centerPane.getChildren().add(root);
+                    } catch (IOException ex) {
+                        Logger.getLogger(mainController.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+            }
+        });
+    }
+
+    @FXML
+    private void FourBeStudentList(MouseEvent event) {
+        fourBE.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                if (event.getButton().equals(MouseButton.PRIMARY) && event.getClickCount() == 2) {
+                    Parent root = null;
+                    try {
+                        root = FXMLLoader.load(mainController.this.getClass().getResource("/studentinfo/fourBe/fourBe.fxml"));
+                        centerPane.getChildren().clear();
+                        centerPane.getChildren().add(root);
+                    } catch (IOException ex) {
+                        Logger.getLogger(mainController.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+            }
+        });
+    }
+
+    @FXML
+    private void threeBeStudentLIst(MouseEvent event) {
+        threeBE.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                if (event.getButton().equals(MouseButton.PRIMARY) && event.getClickCount() == 2) {
+                    Parent root = null;
+                    try {
+                        root = FXMLLoader.load(mainController.this.getClass().getResource("/studentinfo/ThreeBe/threeBe.fxml"));
+                        centerPane.getChildren().clear();
+                        centerPane.getChildren().add(root);
+                    } catch (IOException ex) {
+                        Logger.getLogger(mainController.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+            }
+        });
+    }
+
+    @FXML
+    private void twoBeStudentList(MouseEvent event) {
+        twoBE.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                if (event.getButton().equals(MouseButton.PRIMARY) && event.getClickCount() == 2) {
+                    Parent root = null;
+                    try {
+                        root = FXMLLoader.load(mainController.this.getClass().getResource("/studentinfo/TwoBe/TwoBe.fxml"));
+                        centerPane.getChildren().clear();
+                        centerPane.getChildren().add(root);
+                    } catch (IOException ex) {
+                        Logger.getLogger(mainController.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+            }
+        });
+    }
+
+    @FXML
+    private void oneBeStudentList(MouseEvent event) {
+        oneBE.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                if (event.getButton().equals(MouseButton.PRIMARY) && event.getClickCount() == 2) {
+                    Parent root = null;
+                    try {
+                        root = FXMLLoader.load(mainController.this.getClass().getResource("/studentinfo/OneBe/OneBe.fxml"));
                         centerPane.getChildren().clear();
                         centerPane.getChildren().add(root);
                     } catch (IOException ex) {

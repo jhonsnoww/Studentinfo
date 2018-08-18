@@ -10,14 +10,16 @@ import com.jfoenix.controls.JFXTextField;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ComboBox;
 import javafx.stage.Stage;
 import studentinfo.Dao.StudentinfoDao;
 import studentinfo.Messages.Messages;
 import studentinfo.Model.Student;
-import studentinfo.Model.Teacherinfo;
 
 public class EditStudentController implements Initializable {
 
@@ -35,11 +37,18 @@ public class EditStudentController implements Initializable {
     private StudentinfoDao sdao;
     @FXML
     private JFXButton edSavebtn;
+    @FXML
+    private ComboBox<String> comboBox;
+    
+     ObservableList<String> list = FXCollections.observableArrayList("6-BE","5-BE","4-BE","3-BE","2-BE","1-BE");
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
         sdao = new StudentinfoDao();
+         
+        comboBox.setItems(list);
+        edRoll.setText(comboBox.getSelectionModel().getSelectedItem());
 
     }
 
@@ -76,6 +85,12 @@ public class EditStudentController implements Initializable {
         edRoll.setText(selectedStudent.getRoll());
         edMobile.setText(selectedStudent.getMobile());
         edAddress.setText(selectedStudent.getAddress());
+        comboBox.setValue(selectedStudent.getRoll());
+    }
+
+    @FXML
+    private void chooseRoll(ActionEvent event) {
+         edRoll.setText(comboBox.getSelectionModel().getSelectedItem());
     }
 
 }

@@ -13,7 +13,7 @@
          <children>
             <HBox alignment="CENTER">
                <children>
-                  <JFXTextField fx:id="edtId" editable="false" maxWidth="204.0" minWidth="196.0" prefHeight="34.0" prefWidth="204.0" />
+                  <JFXTextField fx:id="edtId" editable="false" maxWidth="204.0" minWidth="196.0" prefHeight="34.0" prefWidth="204.0" promptText="Enter Your ID" />
                </children>
             </HBox>
             <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0">
@@ -36,10 +36,10 @@
                   <JFXTextField fx:id="edAddress" maxWidth="204.0" minWidth="196.0" prefHeight="34.0" prefWidth="204.0" promptText="Enter Address" />
                </children>
             </HBox>
-            <HBox alignment="CENTER" layoutX="10.0" layoutY="261.0" spacing="20.0">
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="261.0" spacing="20.0" stylesheets="@../stylesheed.css">
                <children>
-                  <JFXButton fx:id="edSavebtnID" onAction="#edTSave" text="Save" />
-                  <JFXButton layoutX="134.0" layoutY="10.0" onAction="#edTCancel" text="Cancel" />
+                  <JFXButton fx:id="edSavebtnID" onAction="#edTSave" prefHeight="40.0" prefWidth="90.0" styleClass="menu-bg" text="Save" />
+                  <JFXButton layoutX="134.0" layoutY="10.0" onAction="#edTCancel" prefHeight="40.0" prefWidth="89.0" styleClass="menu-bg" text="Cancel" />
                </children>
                <padding>
                   <Insets top="30.0" />

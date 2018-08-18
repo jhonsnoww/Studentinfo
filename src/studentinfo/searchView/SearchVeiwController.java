@@ -12,7 +12,6 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 import studentinfo.Dao.StudentinfoDao;
 import studentinfo.Dao.TeacherinfoDao;
@@ -85,6 +84,7 @@ public class SearchVeiwController implements Initializable {
 
         } else {
             Messages.showinfo("Can't find Any Student for this id ..");
+            clearStudentView();
         }
 
     }
@@ -106,7 +106,24 @@ public class SearchVeiwController implements Initializable {
         }
         else {
             Messages.showinfo("Can't find Any Teacher for this id ..");
+            clearTeacherView();
         }
     }
+    
+    public void clearStudentView(){
+        searchViewName.setText("---");
+        searchViewRoll.setText("---");
+        searchVeiwMobile.setText("---");
+        searchViewAddress.setText("---");
+        
+    }
+     public void clearTeacherView(){
+        searchViewName11.setText("---");
+        searchViewRoll11.setText("---");
+        searchVeiwMobile11.setText("---");
+        searchViewAddress11.setText("---");
+        
+    }
+
 
 }
