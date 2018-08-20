@@ -19,6 +19,7 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import studentinfo.Dao.StudentinfoDao;
@@ -45,12 +46,12 @@ public class ThreeBeController implements Initializable {
     private TableColumn<Student, String> mobileThree;
     @FXML
     private TableColumn<Student, String> addressThree;
-StudentinfoDao sdao;
-   
+    StudentinfoDao sdao;
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
-           sdao = new StudentinfoDao();
+
+        sdao = new StudentinfoDao();
         initColumn();
         try {
             loadData();
@@ -58,13 +59,13 @@ StudentinfoDao sdao;
         } catch (SQLException ex) {
             Logger.getLogger(StudentListController.class.getName()).log(Level.SEVERE, null, ex);
         }
-               
-    }    
+
+    }
 
     @FXML
     private void editStudent(ActionEvent event) throws IOException, SQLException {
-        
-          Student selectedStudent = sTableThree.getSelectionModel().getSelectedItem();
+
+        Student selectedStudent = sTableThree.getSelectionModel().getSelectedItem();
 
         if (selectedStudent != null) {
 
@@ -78,6 +79,8 @@ StudentinfoDao sdao;
             stage.initModality(Modality.WINDOW_MODAL);
 
             Scene scene = new Scene(root);
+            stage.setTitle("Edit Student");
+            stage.getIcons().add(new Image("/studentinfo/images/student.png"));
             stage.setScene(scene);
             stage.showAndWait();
             loadData();
@@ -87,7 +90,7 @@ StudentinfoDao sdao;
 
     @FXML
     private void deleteStudent(ActionEvent event) {
-          Student selectedStudent = sTableThree.getSelectionModel().getSelectedItem();
+        Student selectedStudent = sTableThree.getSelectionModel().getSelectedItem();
 
         if (selectedStudent != null) {
 
@@ -107,7 +110,7 @@ StudentinfoDao sdao;
     }
 
     private void initColumn() {
-         idThree.setCellValueFactory(new PropertyValueFactory<>("id"));
+        idThree.setCellValueFactory(new PropertyValueFactory<>("id"));
         nameThree.setCellValueFactory(new PropertyValueFactory<>("name"));
         rollThree.setCellValueFactory(new PropertyValueFactory<>("roll"));
         mobileThree.setCellValueFactory(new PropertyValueFactory<>("mobile"));
@@ -115,12 +118,11 @@ StudentinfoDao sdao;
     }
 
     private void loadData() throws SQLException {
-          ObservableList<Student> list;
+        ObservableList<Student> list;
 
         list = sdao.getthreeBEStudents();
         sTableThree.getItems().setAll(list);
 
-
     }
-    
+
 }

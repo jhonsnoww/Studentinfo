@@ -19,6 +19,7 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import studentinfo.Dao.StudentinfoDao;
@@ -75,6 +76,8 @@ public class OneBeController implements Initializable {
             stage.initModality(Modality.WINDOW_MODAL);
 
             Scene scene = new Scene(root);
+            stage.setTitle("Edit Student");
+            stage.getIcons().add(new Image("/studentinfo/images/student.png"));
             stage.setScene(scene);
             stage.showAndWait();
             loadData();

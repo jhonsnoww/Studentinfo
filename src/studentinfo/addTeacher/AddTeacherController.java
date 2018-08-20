@@ -69,6 +69,11 @@ public class AddTeacherController implements Initializable {
             try {
                 tdao.saveTeacher(tinfo);
                 Messages.showinfo("Adding Teacher Success");
+                teacherId.clear();
+                teacherName.clear();
+                teacherRoll.clear();
+                teacherMobile.clear();
+                teacherAddress.clear();
             } catch (SQLException ex) {
                 Messages.showinfo("Adding Teacherinfo Faild");
                 Logger.getLogger(AddstudentController.class.getName()).log(Level.SEVERE, null, ex);

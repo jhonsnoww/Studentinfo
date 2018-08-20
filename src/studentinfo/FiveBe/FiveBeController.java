@@ -19,6 +19,7 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import studentinfo.Dao.StudentinfoDao;
@@ -26,7 +27,6 @@ import studentinfo.EditStudent.EditStudentController;
 import studentinfo.Messages.Messages;
 import studentinfo.Model.Student;
 import studentinfo.StudentList.StudentListController;
-
 
 public class FiveBeController implements Initializable {
 
@@ -48,6 +48,7 @@ public class FiveBeController implements Initializable {
     private TableColumn<Student, String> addressFive;
 
     StudentinfoDao sdao;
+
     /**
      * Initializes the controller class.
      */
@@ -61,12 +62,12 @@ public class FiveBeController implements Initializable {
         } catch (SQLException ex) {
             Logger.getLogger(StudentListController.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }    
+    }
 
     @FXML
     private void editStudent(ActionEvent event) throws IOException, SQLException {
-        
-         Student selectedStudent = sTableFive.getSelectionModel().getSelectedItem();
+
+        Student selectedStudent = sTableFive.getSelectionModel().getSelectedItem();
 
         if (selectedStudent != null) {
 
@@ -80,6 +81,8 @@ public class FiveBeController implements Initializable {
             stage.initModality(Modality.WINDOW_MODAL);
 
             Scene scene = new Scene(root);
+            stage.setTitle("Edit Student");
+            stage.getIcons().add(new Image("/studentinfo/images/student.png"));
             stage.setScene(scene);
             stage.showAndWait();
             loadData();
@@ -89,8 +92,8 @@ public class FiveBeController implements Initializable {
 
     @FXML
     private void deleteStudent(ActionEvent event) {
-        
-         Student selectedStudent = sTableFive.getSelectionModel().getSelectedItem();
+
+        Student selectedStudent = sTableFive.getSelectionModel().getSelectedItem();
 
         if (selectedStudent != null) {
 
@@ -110,7 +113,7 @@ public class FiveBeController implements Initializable {
     }
 
     private void initColumn() {
-         idFive.setCellValueFactory(new PropertyValueFactory<>("id"));
+        idFive.setCellValueFactory(new PropertyValueFactory<>("id"));
         nameFive.setCellValueFactory(new PropertyValueFactory<>("name"));
         rollFive.setCellValueFactory(new PropertyValueFactory<>("roll"));
         mobileFive.setCellValueFactory(new PropertyValueFactory<>("mobile"));
@@ -124,5 +127,5 @@ public class FiveBeController implements Initializable {
         list = sdao.getFiveBEStudents();
         sTableFive.getItems().setAll(list);
     }
-    
+
 }

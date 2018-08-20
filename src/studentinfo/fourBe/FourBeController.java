@@ -24,6 +24,7 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import studentinfo.Dao.StudentinfoDao;
@@ -71,9 +72,8 @@ public class FourBeController implements Initializable {
 
     @FXML
     private void editStudent(ActionEvent event) throws IOException, SQLException {
-        
-         
-         Student selectedStudent = sTableFour.getSelectionModel().getSelectedItem();
+
+        Student selectedStudent = sTableFour.getSelectionModel().getSelectedItem();
 
         if (selectedStudent != null) {
 
@@ -87,6 +87,8 @@ public class FourBeController implements Initializable {
             stage.initModality(Modality.WINDOW_MODAL);
 
             Scene scene = new Scene(root);
+            stage.setTitle("Edit Student");
+            stage.getIcons().add(new Image("/studentinfo/images/student.png"));
             stage.setScene(scene);
             stage.showAndWait();
             loadData();
@@ -96,8 +98,8 @@ public class FourBeController implements Initializable {
 
     @FXML
     private void deleteStudent(ActionEvent event) {
-        
-          Student selectedStudent = sTableFour.getSelectionModel().getSelectedItem();
+
+        Student selectedStudent = sTableFour.getSelectionModel().getSelectedItem();
 
         if (selectedStudent != null) {
 
@@ -117,16 +119,16 @@ public class FourBeController implements Initializable {
     }
 
     private void initColumn() {
-           idFour.setCellValueFactory(new PropertyValueFactory<>("id"));
+        idFour.setCellValueFactory(new PropertyValueFactory<>("id"));
         nameFour.setCellValueFactory(new PropertyValueFactory<>("name"));
         rollfour.setCellValueFactory(new PropertyValueFactory<>("roll"));
         mobileFour.setCellValueFactory(new PropertyValueFactory<>("mobile"));
         addressFour.setCellValueFactory(new PropertyValueFactory<>("address"));
-       
+
     }
 
     private void loadData() throws SQLException {
-         ObservableList<Student> list;
+        ObservableList<Student> list;
 
         list = sdao.getFourBEStudents();
         sTableFour.getItems().setAll(list);

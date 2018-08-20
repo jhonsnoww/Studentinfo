@@ -34,7 +34,7 @@ public class StudentinfoDao {
 
         Connection con = Database.getInstance().getConnection();
        
-        String sql = "select Count(*) From studentinfo.studentinfo where roll="+str;
+        String sql = "select Count(*) From studentinfo.studentinfo where roll "+str;
 
         Statement stmt = con.createStatement();
 
@@ -130,7 +130,7 @@ public class StudentinfoDao {
         
          Connection con = Database.getInstance().getConnection();
 
-        String sql = "select * from studentinfo.studentinfo where roll="+"\"6-BE\"";
+        String sql = "select * from studentinfo.studentinfo where roll LIKE '6-BE%'";
 
         Statement stmt = con.createStatement();
 
@@ -157,7 +157,7 @@ public class StudentinfoDao {
         
          Connection con = Database.getInstance().getConnection();
 
-        String sql = "select * from studentinfo.studentinfo where roll="+"\"5-BE\"";
+        String sql = "select * from studentinfo.studentinfo where roll LIKE '5-BE%'";
 
         Statement stmt = con.createStatement();
 
@@ -184,7 +184,7 @@ public class StudentinfoDao {
         
          Connection con = Database.getInstance().getConnection();
 
-        String sql = "select * from studentinfo.studentinfo where roll="+"\"4-BE\"";
+        String sql = "select * from studentinfo.studentinfo where roll LIKE '4-BE%'";
 
         Statement stmt = con.createStatement();
 
@@ -212,7 +212,7 @@ public class StudentinfoDao {
         
          Connection con = Database.getInstance().getConnection();
 
-        String sql = "select * from studentinfo.studentinfo where roll="+"\"3-BE\"";
+        String sql = "select * from studentinfo.studentinfo where roll LIKE '3-BE%'";
 
         Statement stmt = con.createStatement();
 
@@ -240,7 +240,7 @@ public class StudentinfoDao {
         
          Connection con = Database.getInstance().getConnection();
 
-        String sql = "select * from studentinfo.studentinfo where roll="+"\"2-BE\"";
+        String sql = "select * from studentinfo.studentinfo where roll LIKE '2-BE%'";
 
         Statement stmt = con.createStatement();
 
@@ -267,7 +267,7 @@ public class StudentinfoDao {
         
          Connection con = Database.getInstance().getConnection();
 
-        String sql = "select * from studentinfo.studentinfo where roll="+"\"1-BE\"";
+        String sql = "select * from studentinfo.studentinfo where roll LIKE '1-BE%'";
 
         Statement stmt = con.createStatement();
 

@@ -10,6 +10,8 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
@@ -130,141 +132,177 @@
             </VBox>
          </left>
          <center>
-            <StackPane fx:id="centerPane" prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <StackPane fx:id="centerPane" prefHeight="150.0" prefWidth="200.0" styleClass="circle" stylesheets="@stylesheed.css" BorderPane.alignment="CENTER">
                <children>
-                  <HBox fx:id="homeView" alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                  <VBox fx:id="homeView" prefHeight="200.0" prefWidth="100.0" spacing="20.0">
                      <children>
-                        <VBox alignment="CENTER" prefHeight="560.0" prefWidth="289.0" spacing="5.0">
-                           <HBox.margin>
-                              <Insets />
-                           </HBox.margin>
+                        <HBox alignment="TOP_CENTER" prefHeight="148.0" prefWidth="581.0" styleClass="center_bg">
                            <children>
-                              <HBox alignment="CENTER" blendMode="SRC_ATOP" prefHeight="38.0" prefWidth="160.0" styleClass="menu-bg">
+                              <VBox alignment="CENTER" prefHeight="184.0" prefWidth="482.0" spacing="15.0">
                                  <children>
-                                    <Text fx:id="tID" fill="#7a48ee" onMouseClicked="#totalTeacherList" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Teachers" wrappingWidth="245.13671875">
-                                       <HBox.margin>
-                                          <Insets left="10.0" />
-                                       </HBox.margin>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Technological University (SaGaing)">
                                        <font>
-                                          <Font name="System Bold" size="13.0" />
+                                          <Font name="Georgia Bold" size="24.0" />
                                        </font>
+                                       <fill>
+                                          <LinearGradient endX="1.0" endY="1.0">
+                                             <stops>
+                                                <Stop color="BLACK" />
+                                                <Stop color="BLACK" offset="1.0" />
+                                             </stops>
+                                          </LinearGradient>
+                                       </fill>
                                     </Text>
-                                    <Text fx:id="totalTeacherId" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="circle" text="0">
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Department of Electronics">
                                        <font>
-                                          <Font name="System Bold" size="13.0" />
+                                          <Font name="Franklin Gothic Heavy Italic" size="18.0" />
                                        </font>
                                     </Text>
                                  </children>
-                              </HBox>
-                              <HBox alignment="CENTER" layoutX="10.0" layoutY="281.0" prefHeight="38.0" prefWidth="160.0" styleClass="menu-bg">
-                                 <children>
-                                    <Text fx:id="sixBE" fill="#7a48ee" onMouseClicked="#totalStudentList" strokeType="OUTSIDE" strokeWidth="0.0" text="6-BE Students" textOrigin="CENTER" wrappingWidth="244.13671875">
-                                       <HBox.margin>
-                                          <Insets left="10.0" />
-                                       </HBox.margin>
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Text>
-                                    <Text fx:id="sixBeStudents" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
-                                       <font>
-                                          <Font name="System Bold" size="13.0" />
-                                       </font>
-                                    </Text>
-                                 </children>
-                              </HBox>
-                              <HBox alignment="CENTER" layoutX="10.0" layoutY="293.0" prefHeight="38.0" prefWidth="160.0" styleClass="menu-bg">
-                                 <children>
-                                    <Text fx:id="fiveBE" fill="#7a48ee" onMouseClicked="#FiveBeStudentList" strokeType="OUTSIDE" strokeWidth="0.0" text="5-BE Students" textOrigin="CENTER" wrappingWidth="244.13671875">
-                                       <HBox.margin>
-                                          <Insets left="10.0" />
-                                       </HBox.margin>
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Text>
-                                    <Text fx:id="fiveBeStudents" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
-                                       <font>
-                                          <Font name="System Bold" size="13.0" />
-                                       </font>
-                                    </Text>
-                                 </children>
-                              </HBox>
-                              <HBox alignment="CENTER" layoutX="10.0" layoutY="271.0" prefHeight="38.0" prefWidth="160.0" styleClass="menu-bg">
-                                 <children>
-                                    <Text fx:id="fourBE" fill="#7a48ee" onMouseClicked="#FourBeStudentList" strokeType="OUTSIDE" strokeWidth="0.0" text="4-BE Students" textOrigin="CENTER" wrappingWidth="244.13671875">
-                                       <HBox.margin>
-                                          <Insets left="10.0" />
-                                       </HBox.margin>
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Text>
-                                    <Text fx:id="fourBeStudents" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
-                                       <font>
-                                          <Font name="System Bold" size="13.0" />
-                                       </font>
-                                    </Text>
-                                 </children>
-                              </HBox>
-                              <HBox alignment="CENTER" layoutX="10.0" layoutY="250.0" prefHeight="38.0" prefWidth="160.0" styleClass="menu-bg">
-                                 <children>
-                                    <Text fx:id="threeBE" fill="#7a48ee" onMouseClicked="#threeBeStudentLIst" strokeType="OUTSIDE" strokeWidth="0.0" text="3-BE Students" textOrigin="CENTER" wrappingWidth="244.13671875">
-                                       <HBox.margin>
-                                          <Insets left="10.0" />
-                                       </HBox.margin>
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Text>
-                                    <Text fx:id="threeBeStudents" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
-                                       <font>
-                                          <Font name="System Bold" size="13.0" />
-                                       </font>
-                                    </Text>
-                                 </children>
-                              </HBox>
-                              <HBox alignment="CENTER" layoutX="10.0" layoutY="293.0" prefHeight="38.0" prefWidth="160.0" styleClass="menu-bg">
-                                 <children>
-                                    <Text fx:id="twoBE" fill="#7a48ee" onMouseClicked="#twoBeStudentList" strokeType="OUTSIDE" strokeWidth="0.0" text="2-BE Students" textOrigin="CENTER" wrappingWidth="244.13671875">
-                                       <HBox.margin>
-                                          <Insets left="10.0" />
-                                       </HBox.margin>
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Text>
-                                    <Text fx:id="twobeStudentsId" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
-                                       <font>
-                                          <Font name="System Bold" size="13.0" />
-                                       </font>
-                                    </Text>
-                                 </children>
-                              </HBox>
-                              <HBox alignment="CENTER" layoutX="10.0" layoutY="336.0" prefHeight="38.0" prefWidth="160.0" styleClass="menu-bg">
-                                 <children>
-                                    <Text fx:id="oneBE" fill="#7a48ee" onMouseClicked="#oneBeStudentList" strokeType="OUTSIDE" strokeWidth="0.0" text="1-BE Students" textOrigin="CENTER" wrappingWidth="244.13671875">
-                                       <HBox.margin>
-                                          <Insets left="10.0" />
-                                       </HBox.margin>
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Text>
-                                    <Text fx:id="onebeStudentsId" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
-                                       <font>
-                                          <Font name="System Bold" size="13.0" />
-                                       </font>
-                                    </Text>
-                                 </children>
-                              </HBox>
+                              </VBox>
                            </children>
-                           <opaqueInsets>
-                              <Insets right="10.0" top="10.0" />
-                           </opaqueInsets>
-                        </VBox>
+                           <VBox.margin>
+                              <Insets left="15.0" right="15.0" top="20.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="275.0" prefWidth="581.0">
+                           <children>
+                              <VBox alignment="CENTER" prefHeight="560.0" prefWidth="289.0" spacing="5.0">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                                 <children>
+                                    <HBox alignment="CENTER" blendMode="SRC_ATOP" prefHeight="38.0" prefWidth="160.0" styleClass="menu-bg">
+                                       <children>
+                                          <Text fx:id="tID" fill="#7a48ee" onMouseClicked="#totalTeacherList" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Teachers" wrappingWidth="245.13671875">
+                                             <HBox.margin>
+                                                <Insets left="10.0" />
+                                             </HBox.margin>
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                          </Text>
+                                          <Text fx:id="totalTeacherId" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="circle" text="0">
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" layoutX="10.0" layoutY="281.0" prefHeight="38.0" prefWidth="160.0" styleClass="menu-bg">
+                                       <children>
+                                          <Text fx:id="sixBE" fill="#7a48ee" onMouseClicked="#totalStudentList" strokeType="OUTSIDE" strokeWidth="0.0" text="6-BE Students" textOrigin="CENTER" wrappingWidth="244.13671875">
+                                             <HBox.margin>
+                                                <Insets left="10.0" />
+                                             </HBox.margin>
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Text>
+                                          <Text fx:id="sixBeStudents" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" layoutX="10.0" layoutY="293.0" prefHeight="38.0" prefWidth="160.0" styleClass="menu-bg">
+                                       <children>
+                                          <Text fx:id="fiveBE" fill="#7a48ee" onMouseClicked="#FiveBeStudentList" strokeType="OUTSIDE" strokeWidth="0.0" text="5-BE Students" textOrigin="CENTER" wrappingWidth="244.13671875">
+                                             <HBox.margin>
+                                                <Insets left="10.0" />
+                                             </HBox.margin>
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Text>
+                                          <Text fx:id="fiveBeStudents" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" layoutX="10.0" layoutY="271.0" prefHeight="38.0" prefWidth="160.0" styleClass="menu-bg">
+                                       <children>
+                                          <Text fx:id="fourBE" fill="#7a48ee" onMouseClicked="#FourBeStudentList" strokeType="OUTSIDE" strokeWidth="0.0" text="4-BE Students" textOrigin="CENTER" wrappingWidth="244.13671875">
+                                             <HBox.margin>
+                                                <Insets left="10.0" />
+                                             </HBox.margin>
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Text>
+                                          <Text fx:id="fourBeStudents" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" layoutX="10.0" layoutY="250.0" prefHeight="38.0" prefWidth="160.0" styleClass="menu-bg">
+                                       <children>
+                                          <Text fx:id="threeBE" fill="#7a48ee" onMouseClicked="#threeBeStudentLIst" strokeType="OUTSIDE" strokeWidth="0.0" text="3-BE Students" textOrigin="CENTER" wrappingWidth="244.13671875">
+                                             <HBox.margin>
+                                                <Insets left="10.0" />
+                                             </HBox.margin>
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Text>
+                                          <Text fx:id="threeBeStudents" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" layoutX="10.0" layoutY="293.0" prefHeight="38.0" prefWidth="160.0" styleClass="menu-bg">
+                                       <children>
+                                          <Text fx:id="twoBE" fill="#7a48ee" onMouseClicked="#twoBeStudentList" strokeType="OUTSIDE" strokeWidth="0.0" text="2-BE Students" textOrigin="CENTER" wrappingWidth="244.13671875">
+                                             <HBox.margin>
+                                                <Insets left="10.0" />
+                                             </HBox.margin>
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Text>
+                                          <Text fx:id="twobeStudentsId" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" layoutX="10.0" layoutY="336.0" prefHeight="38.0" prefWidth="160.0" styleClass="menu-bg">
+                                       <children>
+                                          <Text fx:id="oneBE" fill="#7a48ee" onMouseClicked="#oneBeStudentList" strokeType="OUTSIDE" strokeWidth="0.0" text="1-BE Students" textOrigin="CENTER" wrappingWidth="244.13671875">
+                                             <HBox.margin>
+                                                <Insets left="10.0" />
+                                             </HBox.margin>
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Text>
+                                          <Text fx:id="onebeStudentsId" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets right="10.0" top="10.0" />
+                                 </opaqueInsets>
+                              </VBox>
+                           </children>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </HBox>
                      </children>
-                  </HBox>
+                  </VBox>
                </children>
             </StackPane>
          </center>

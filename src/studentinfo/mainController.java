@@ -43,7 +43,7 @@ public class mainController implements Initializable {
     @FXML
     private StackPane centerPane;
     @FXML
-    private HBox homeView;
+    private VBox homeView;
 
     private StudentinfoDao sdao;
 
@@ -76,8 +76,6 @@ public class mainController implements Initializable {
     private Text twoBE;
     @FXML
     private Text oneBE;
-    @FXML
-    private VBox cir1;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -163,12 +161,12 @@ public class mainController implements Initializable {
         int i1 = 0;
 
         try {
-            i6 = sdao.totalStudent("\"6-BE\"");
-            i5 = sdao.totalStudent("\"5-BE\"");
-            i4 = sdao.totalStudent("\"4-BE\"");
-            i3 = sdao.totalStudent("\"3-BE\"");
-            i2 = sdao.totalStudent("\"2-BE\"");
-            i1 = sdao.totalStudent("\"1-BE\"");
+            i6 = sdao.totalStudent("LIKE '6-BE%'");
+            i5 = sdao.totalStudent("LIKE '5-BE%'");
+            i4 = sdao.totalStudent("LIKE '4-BE%'");
+            i3 = sdao.totalStudent("LIKE '3-BE%'");
+            i2 = sdao.totalStudent("LIKE '2-BE%'");
+            i1 = sdao.totalStudent("LIKE '1-BE%'");
         } catch (SQLException ex) {
             Logger.getLogger(mainController.class.getName()).log(Level.SEVERE, null, ex);
         }

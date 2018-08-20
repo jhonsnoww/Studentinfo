@@ -19,6 +19,7 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import studentinfo.Dao.TeacherinfoDao;
@@ -77,6 +78,8 @@ public class TeacherListController implements Initializable {
 
             Scene scene = new Scene(root);
             stage.setScene(scene);
+            stage.setTitle("Edit Teacher");
+            stage.getIcons().add(new Image("/studentinfo/images/teacher.png"));
             stage.showAndWait();
             loadData();
 
@@ -91,7 +94,7 @@ public class TeacherListController implements Initializable {
         if (selectedTeacher != null) {
             Optional<ButtonType> selectedOption = Messages.shwoConfimMessage("Are You Sure Want To Delete This ? ");
 
-            if(selectedOption.get()== ButtonType.OK){
+            if (selectedOption.get() == ButtonType.OK) {
                 tdao.deleteTeacherinfo(selectedTeacher);
                 tTableView.getItems().remove(selectedTeacher);
             }

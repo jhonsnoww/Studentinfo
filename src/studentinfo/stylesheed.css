@@ -22,4 +22,7 @@ and open the template in the editor.
 	height: 50px; 
 	/* width and height can be anything, as long as they're equal */
 }
+.center_bg{
+    -fx-background-color:gainsboro;
+}
 

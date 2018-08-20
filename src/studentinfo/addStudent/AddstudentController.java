@@ -69,6 +69,11 @@ public class AddstudentController implements Initializable {
             try {
                 sdao.saveStudent(student);
                 Messages.showinfo("Adding Student Success");
+                studentId.clear();
+                studentName.clear();
+                studentRoll.clear();
+                studentMobile.clear();
+                StudentAddress.clear();
             } catch (SQLException ex) {
                 Messages.showinfo("Adding Student Faild");
                 Logger.getLogger(AddstudentController.class.getName()).log(Level.SEVERE, null, ex);

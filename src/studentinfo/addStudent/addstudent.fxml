@@ -41,7 +41,7 @@
                   </HBox>
                   <HBox layoutX="10.0" layoutY="210.0" prefHeight="51.0" prefWidth="261.0">
                      <children>
-                        <JFXTextField fx:id="studentRoll" editable="false" labelFloat="true" maxWidth="250.0" minWidth="121.0" prefHeight="31.0" prefWidth="135.0" promptText="Choose Your Roll" />
+                        <JFXTextField fx:id="studentRoll" labelFloat="true" maxWidth="250.0" minWidth="121.0" prefHeight="31.0" prefWidth="135.0" promptText="Choose Your Year" />
                         <ComboBox fx:id="comboBox" onAction="#chooseBox" prefHeight="25.0" prefWidth="114.0" />
                      </children>
                   </HBox>
