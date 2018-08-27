@@ -48,18 +48,14 @@ public class DbConfigManeger {
             
              String host = prop.getProperty("host");
             String port = prop.getProperty("port");
-            String user = prop.getProperty("username");
+            String user = prop.getProperty("user");
             String password = prop.getProperty("password");
             
-            dbproperty = new DatabaseConfigProperty(host, port, user, password);
-            
-            
+            dbproperty = new DatabaseConfigProperty(host, port, user, password);     
             
         } catch (Exception ex) {
             ex.printStackTrace();
-            Logger.getLogger(DbConfigManeger.class.getName()).log(Level.SEVERE, null, ex);
-       
-        }
+    }
         
         return dbproperty;
     } 

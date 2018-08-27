@@ -40,7 +40,7 @@ public class Database {
         DbConfigManeger dbManeger = new DbConfigManeger();
         DatabaseConfigProperty dbprop = dbManeger.getDatabaseProperties();
 
-            con = DriverManager.getConnection("jdbc:mysql://"+dbprop.getHost()+":"+dbprop.getPort()+"/",dbprop.getUser(),dbprop.getPassword());
+       con = DriverManager.getConnection("jdbc:mysql://"+dbprop.getHost()+":"+dbprop.getPort()+"/",dbprop.getUser(),dbprop.getPassword());
         System.out.println("Connect DataBase to Succefully");
 
     }

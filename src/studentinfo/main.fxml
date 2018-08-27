@@ -153,9 +153,9 @@
                                           </LinearGradient>
                                        </fill>
                                     </Text>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Department of Electronics">
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Electronic Department  ">
                                        <font>
-                                          <Font name="Franklin Gothic Heavy Italic" size="18.0" />
+                                          <Font name="Serif Bold" size="24.0" />
                                        </font>
                                     </Text>
                                  </children>

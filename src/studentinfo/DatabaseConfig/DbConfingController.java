@@ -49,17 +49,17 @@ public class DbConfingController implements Initializable {
         
         dbManeger = new DbConfigManeger();
 
-        DatabaseConfigProperty dbProperty = dbManeger.getDatabaseProperties();
+       DatabaseConfigProperty dbProperty = dbManeger.getDatabaseProperties();
 
         hostField.setText(dbProperty.getHost());
         nameField.setText(dbProperty.getUser());
-        passFileld.setText(dbProperty.getPassword());
+        passFileld.setText(dbProperty.getPassword());  
 
         SpinnerValueFactory<Integer> valueFactory
-                = new SpinnerValueFactory.IntegerSpinnerValueFactory(3300, 3320, Integer.parseInt(dbProperty.getPort()));
+                = new SpinnerValueFactory.IntegerSpinnerValueFactory(3300, 3320,Integer.parseInt(dbProperty.getPort()));
         
         portSpinner.setValueFactory(valueFactory);
-        
+      
         
 
     }
