@@ -22,6 +22,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import studentinfo.ChooseDate.ChooseDateController;
 import studentinfo.Dao.StudentinfoDao;
 import studentinfo.EditStudent.EditStudentController;
 import studentinfo.Messages.Messages;
@@ -120,7 +121,7 @@ public class ThreeBeController implements Initializable {
     private void loadData() throws SQLException {
         ObservableList<Student> list;
 
-        list = sdao.getthreeBEStudents();
+        list = sdao.getthreeBEStudents(ChooseDateController.startDate,ChooseDateController.endDate);
         sTableThree.getItems().setAll(list);
 
     }

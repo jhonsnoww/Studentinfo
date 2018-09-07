@@ -15,44 +15,48 @@
          <children>
             <VBox alignment="CENTER" prefHeight="600.0" prefWidth="263.0" spacing="10.0" stylesheets="@../stylesheed.css">
                <children>
-                  <HBox prefHeight="100.0" prefWidth="200.0">
+                  <HBox prefHeight="66.0" prefWidth="263.0">
                      <children>
                         <ImageView fitHeight="30.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../images/search.png" />
                            </image>
                         </ImageView>
-                        <JFXTextField fx:id="searchById" labelFloat="true" maxWidth="485.0" minWidth="154.0" onAction="#searchByIdBtn" prefHeight="31.0" prefWidth="154.0" promptText="Enter Student ID">
+                        <JFXTextField fx:id="searchViewName" labelFloat="true" maxWidth="485.0" minWidth="154.0" onAction="#searchByIdBtn" prefHeight="35.0" prefWidth="185.0" promptText="Enter Your Name">
                            <font>
                               <Font size="13.0" />
                            </font>
                         </JFXTextField>
                      </children>
                   </HBox>
-                  <Text fx:id="searchViewName" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="main_bg" text="Name" wrappingWidth="136.13671875" />
+                  <Text fx:id="searchViewId" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="main_bg" text="Id" wrappingWidth="136.13671875" />
+                  <Text fx:id="searchViewNameresult" layoutX="73.0" layoutY="321.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="main_bg" text="Name" wrappingWidth="136.13671875" />
                   <Text fx:id="searchViewRoll" layoutX="73.0" layoutY="315.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Roll" wrappingWidth="136.13671875" />
+                  <Text fx:id="searchViewYear" layoutX="73.0" layoutY="396.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" wrappingWidth="136.13671875" />
                   <Text fx:id="searchVeiwMobile" layoutX="73.0" layoutY="307.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mobile" wrappingWidth="136.13671875" />
                   <Text fx:id="searchViewAddress" layoutX="73.0" layoutY="323.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address" wrappingWidth="136.13671875" />
                </children>
             </VBox>
             <VBox alignment="CENTER" prefHeight="600.0" prefWidth="263.0" spacing="10.0" stylesheets="@../stylesheed.css">
                <children>
-                  <HBox prefHeight="100.0" prefWidth="200.0">
+                  <HBox prefHeight="66.0" prefWidth="263.0">
                      <children>
                         <ImageView fitHeight="30.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../images/search.png" />
                            </image>
                         </ImageView>
-                        <JFXTextField fx:id="t_id" labelFloat="true" maxWidth="485.0" minWidth="154.0" onAction="#searchTeacher" prefHeight="31.0" prefWidth="154.0" promptText="Enter Teacher ID">
+                        <JFXTextField fx:id="t_Name" labelFloat="true" maxWidth="485.0" minWidth="154.0" onAction="#searchTeacher" prefHeight="35.0" prefWidth="185.0" promptText="Enter  Your Name">
                            <font>
                               <Font size="13.0" />
                            </font>
                         </JFXTextField>
                      </children>
                   </HBox>
+                  <Text fx:id="searchViewId11" layoutX="73.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="main_bg" text="Id" wrappingWidth="136.13671875" />
                   <Text fx:id="searchViewName11" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="main_bg" text="Name" wrappingWidth="136.13671875" />
                   <Text fx:id="searchViewRoll11" layoutX="73.0" layoutY="315.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Position" wrappingWidth="136.13671875" />
+                  <Text fx:id="searchViewDate" layoutX="73.0" layoutY="412.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" wrappingWidth="136.13671875" />
                   <Text fx:id="searchVeiwMobile11" layoutX="73.0" layoutY="307.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mobile" wrappingWidth="136.13671875" />
                   <Text fx:id="searchViewAddress11" layoutX="73.0" layoutY="323.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address" wrappingWidth="136.13671875" />
                </children>

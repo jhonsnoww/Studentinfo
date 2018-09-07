@@ -22,10 +22,12 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import studentinfo.ChooseDate.ChooseDateController;
 import studentinfo.Dao.StudentinfoDao;
 import studentinfo.EditStudent.EditStudentController;
 import studentinfo.Messages.Messages;
 import studentinfo.Model.Student;
+import studentinfo.mainController;
 
 /**
  * FXML Controller class
@@ -81,7 +83,7 @@ public class StudentListController implements Initializable {
 
         ObservableList<Student> list;
 
-        list = sdao.getStudents();
+        list = sdao.getStudents(ChooseDateController.startDate,ChooseDateController.endDate);
         studentTableView.getItems().setAll(list);
 
     }
@@ -115,7 +117,7 @@ public class StudentListController implements Initializable {
     @FXML
     private void deleteStudent(ActionEvent event) {
         Student selectedStudent = studentTableView.getSelectionModel().getSelectedItem();
-        
+       
          if (selectedStudent != null) {
              
              Optional <ButtonType> selectedOption = Messages.shwoConfimMessage("Are You Sure Want To Delete This ? ");

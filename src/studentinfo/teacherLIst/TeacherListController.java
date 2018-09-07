@@ -22,6 +22,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import studentinfo.ChooseDate.ChooseDateController;
 import studentinfo.Dao.TeacherinfoDao;
 import studentinfo.EditTeacher.EditTeacherController;
 import studentinfo.Messages.Messages;
@@ -111,11 +112,12 @@ public class TeacherListController implements Initializable {
 
     }
 
-    private void loadData() throws SQLException {
+    public void loadData() throws SQLException {
 
         ObservableList<Teacherinfo> list;
+        System.out.println(""+ChooseDateController.startDate);
 
-        list = tdao.getTeachers();
+        list = tdao.getTeachers(ChooseDateController.startDate,ChooseDateController.endDate);
         tTableView.getItems().setAll(list);
 
     }

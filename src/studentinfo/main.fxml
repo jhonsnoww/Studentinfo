@@ -136,7 +136,7 @@
                <children>
                   <VBox fx:id="homeView" prefHeight="200.0" prefWidth="100.0" spacing="20.0">
                      <children>
-                        <HBox alignment="TOP_CENTER" prefHeight="148.0" prefWidth="581.0" styleClass="center_bg">
+                        <StackPane prefHeight="180.0" prefWidth="300.0">
                            <children>
                               <VBox alignment="CENTER" prefHeight="184.0" prefWidth="482.0" spacing="15.0">
                                  <children>
@@ -153,18 +153,45 @@
                                           </LinearGradient>
                                        </fill>
                                     </Text>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Electronic Department  ">
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Department of Electronics ">
                                        <font>
                                           <Font name="Serif Bold" size="24.0" />
                                        </font>
                                     </Text>
+                                    <HBox fx:id="chooseY" alignment="CENTER" onMouseClicked="#dateClicked" styleClass="center_bg">
+                                       <children>
+                                          <Text fx:id="startYear" onMouseClicked="#dateClicked" strokeType="OUTSIDE" strokeWidth="0.0" text="2017-08-02" wrappingWidth="90.66796875">
+                                             <font>
+                                                <Font name="Serif Bold" size="18.0" />
+                                             </font>
+                                          </Text>
+                                          <Text fx:id="currentYear1" layoutX="231.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="/" wrappingWidth="9.66796875">
+                                             <font>
+                                                <Font name="Serif Bold" size="24.0" />
+                                             </font>
+                                          </Text>
+                                          <Text fx:id="endYear" layoutX="172.0" layoutY="31.0" onMouseClicked="#dateClicked" strokeType="OUTSIDE" strokeWidth="0.0" text="2018-09-09" wrappingWidth="84.66796875">
+                                             <font>
+                                                <Font name="Serif Bold" size="18.0" />
+                                             </font>
+                                          </Text>
+                                          <ImageView fitHeight="20.0" fitWidth="200.0" onMouseClicked="#dateClicked" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@images/calendar.png" />
+                                             </image>
+                                             <HBox.margin>
+                                                <Insets left="10.0" />
+                                             </HBox.margin>
+                                          </ImageView>
+                                       </children>
+                                    </HBox>
                                  </children>
                               </VBox>
                            </children>
                            <VBox.margin>
-                              <Insets left="15.0" right="15.0" top="20.0" />
+                              <Insets left="15.0" right="15.0" top="15.0" />
                            </VBox.margin>
-                        </HBox>
+                        </StackPane>
                         <HBox alignment="CENTER" prefHeight="275.0" prefWidth="581.0">
                            <children>
                               <VBox alignment="CENTER" prefHeight="560.0" prefWidth="289.0" spacing="5.0">

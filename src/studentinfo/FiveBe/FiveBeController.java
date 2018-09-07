@@ -22,6 +22,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import studentinfo.ChooseDate.ChooseDateController;
 import studentinfo.Dao.StudentinfoDao;
 import studentinfo.EditStudent.EditStudentController;
 import studentinfo.Messages.Messages;
@@ -62,6 +63,7 @@ public class FiveBeController implements Initializable {
         } catch (SQLException ex) {
             Logger.getLogger(StudentListController.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
     }
 
     @FXML
@@ -124,8 +126,9 @@ public class FiveBeController implements Initializable {
     private void loadData() throws SQLException {
         ObservableList<Student> list;
 
-        list = sdao.getFiveBEStudents();
+        list = sdao.getFiveBEStudents(ChooseDateController.startDate,ChooseDateController.endDate);
         sTableFive.getItems().setAll(list);
+        
     }
 
 }

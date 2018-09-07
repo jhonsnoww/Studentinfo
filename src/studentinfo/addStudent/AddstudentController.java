@@ -75,7 +75,7 @@ public class AddstudentController implements Initializable {
                 studentMobile.clear();
                 StudentAddress.clear();
             } catch (SQLException ex) {
-                Messages.showinfo("Adding Student Faild");
+                Messages.showinfo("Adding Student Faild \n"+ex.getMessage());
                 Logger.getLogger(AddstudentController.class.getName()).log(Level.SEVERE, null, ex);
             }
         }

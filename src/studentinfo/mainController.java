@@ -8,6 +8,8 @@ package studentinfo;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.time.LocalDate;
+import java.util.Calendar;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -18,18 +20,17 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.DatePicker;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
-import javafx.scene.text.TextBoundsType;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import studentinfo.ChooseDate.ChooseDateController;
 import studentinfo.Dao.StudentinfoDao;
 import studentinfo.Dao.TeacherinfoDao;
 import studentinfo.Messages.Messages;
@@ -76,15 +77,48 @@ public class mainController implements Initializable {
     private Text twoBE;
     @FXML
     private Text oneBE;
+    @FXML
+    public Text startYear;
+    @FXML
+    public Text endYear;
+    @FXML
+    private HBox chooseY;
+    
+      static LocalDate getCurrentYear (){
+             Calendar now = Calendar.getInstance();
+        int y = now.get(Calendar.YEAR);
+        int m = now.get(Calendar.MONTH);
+        int d = now.get(Calendar.DATE);
+        return LocalDate.of(y, m+1, d);
+        }
+      
+      static LocalDate getLastYear (){
+             Calendar now = Calendar.getInstance();
+        int y = now.get(Calendar.YEAR);
+        int m = now.get(Calendar.MONTH);
+        int d = now.get(Calendar.DATE);
+        return LocalDate.of(y-1, m+1, d);
+        }
+      
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+      
+       
+        
+        ChooseDateController.startDate = getLastYear();
+        ChooseDateController.endDate = getCurrentYear();
+        
+        startYear.setText(""+ChooseDateController.startDate);
+        endYear.setText(""+ChooseDateController.endDate);
 
         sdao = new StudentinfoDao();
         totalStudent();
 
         tdao = new TeacherinfoDao();
         totalTeacher();
+                System.out.println(""+ChooseDateController.endDate);
+
 
     }
 
@@ -161,17 +195,16 @@ public class mainController implements Initializable {
         int i1 = 0;
 
         try {
-            i6 = sdao.totalStudent("LIKE '6-BE%'");
-            i5 = sdao.totalStudent("LIKE '5-BE%'");
-            i4 = sdao.totalStudent("LIKE '4-BE%'");
-            i3 = sdao.totalStudent("LIKE '3-BE%'");
-            i2 = sdao.totalStudent("LIKE '2-BE%'");
-            i1 = sdao.totalStudent("LIKE '1-BE%'");
+            i6 = sdao.totalStudent("LIKE '6-BE%'", ChooseDateController.startDate, ChooseDateController.endDate);
+            i5 = sdao.totalStudent("LIKE '5-BE%'", ChooseDateController.startDate, ChooseDateController.endDate);
+            i4 = sdao.totalStudent("LIKE '4-BE%'", ChooseDateController.startDate, ChooseDateController.endDate);
+            i3 = sdao.totalStudent("LIKE '3-BE%'", ChooseDateController.startDate, ChooseDateController.endDate);
+            i2 = sdao.totalStudent("LIKE '2-BE%'", ChooseDateController.startDate, ChooseDateController.endDate);
+            i1 = sdao.totalStudent("LIKE '1-BE%'", ChooseDateController.startDate, ChooseDateController.endDate);
         } catch (SQLException ex) {
             Logger.getLogger(mainController.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-       
         sixBeStudents.setText("" + i6);
         fiveBeStudents.setText("" + i5);
         fourBeStudents.setText("" + i4);
@@ -184,7 +217,8 @@ public class mainController implements Initializable {
     private void totalTeacher() {
         int i = 0;
         try {
-            i = tdao.totalTeacher();
+            i = tdao.totalTeacher(ChooseDateController.startDate, ChooseDateController.endDate);
+
         } catch (SQLException ex) {
             Logger.getLogger(mainController.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -228,6 +262,7 @@ public class mainController implements Initializable {
             @Override
             public void handle(MouseEvent event) {
                 if (event.getButton().equals(MouseButton.PRIMARY) && event.getClickCount() == 2) {
+
                     Parent root = null;
                     try {
                         root = FXMLLoader.load(mainController.this.getClass().getResource("/studentinfo/SixBeList/SixBeStudentList.fxml"));
@@ -332,6 +367,43 @@ public class mainController implements Initializable {
                         Logger.getLogger(mainController.class.getName()).log(Level.SEVERE, null, ex);
                     }
                 }
+            }
+        });
+    }
+
+    @FXML
+    private void dateClicked(MouseEvent event) {
+        chooseY.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+
+                if (event.getButton().equals(MouseButton.PRIMARY) && event.getClickCount() == 2) {
+
+                    Parent root;
+                    try {
+                        root = FXMLLoader.load(getClass().getResource("/studentinfo/ChooseDate/chooseDate.fxml"));
+                        Scene scence = new Scene(root);
+                        Stage stage = new Stage();
+                        stage.setTitle("Choose!");
+                        stage.getIcons().add(new Image("/studentinfo/images/calendar.png"));
+                        stage.setScene(scence);
+
+                        stage.initOwner(centerPane.getScene().getWindow());
+                        stage.initModality(Modality.WINDOW_MODAL);
+                        stage.showAndWait();
+
+                        startYear.setText("" + ChooseDateController.startDate);
+                        endYear.setText("" + ChooseDateController.endDate);
+                        totalTeacher();
+                        totalStudent();
+
+                    } catch (IOException ex) {
+                        Logger.getLogger(mainController.class.getName()).log(Level.SEVERE, null, ex);
+
+                    }
+
+                }
+
             }
         });
     }

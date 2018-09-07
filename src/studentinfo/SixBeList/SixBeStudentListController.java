@@ -27,6 +27,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import studentinfo.ChooseDate.ChooseDateController;
 import studentinfo.Dao.StudentinfoDao;
 import studentinfo.EditStudent.EditStudentController;
 import studentinfo.Messages.Messages;
@@ -130,8 +131,8 @@ public class SixBeStudentListController implements Initializable {
 
     private void loadData() throws SQLException {
         ObservableList<Student> list;
-
-        list = sdao.getSixBEStudents();
+        System.out.println("6-BE"+ChooseDateController.startDate);
+        list = sdao.getSixBEStudents(ChooseDateController.startDate,ChooseDateController.endDate);
         sTableSix.getItems().setAll(list);
 
     }

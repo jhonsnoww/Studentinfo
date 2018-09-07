@@ -5,6 +5,8 @@
  */
 package studentinfo.Model;
 
+import java.util.Date;
+
 /**
  *
  * @author hp
@@ -16,6 +18,25 @@ public class Teacherinfo {
     private String roll;
     private String mobile;
     private String address;
+    private Date date;
+
+    public Teacherinfo(String id, String name, String roll, String mobile, String address, Date date) {
+        this.id = id;
+        this.name = name;
+        this.roll = roll;
+        this.mobile = mobile;
+        this.address = address;
+        this.date = date;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+    
 
     public Teacherinfo(String id, String name, String roll, String mobile, String address) {
         this.id = id;

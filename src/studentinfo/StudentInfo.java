@@ -6,12 +6,15 @@
 package studentinfo;
 
 import java.sql.SQLException;
+import java.time.LocalDate;
+import java.util.Calendar;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import studentinfo.ChooseDate.ChooseDateController;
 import studentinfo.Database.Database;
 import studentinfo.Messages.Messages;
 
@@ -23,6 +26,8 @@ public class StudentInfo extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
+        
+        
         
        try{
                Database db = Database.getInstance();

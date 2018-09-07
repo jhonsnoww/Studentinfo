@@ -8,6 +8,9 @@ package studentinfo.searchView;
 import com.jfoenix.controls.JFXTextField;
 import java.net.URL;
 import java.sql.SQLException;
+import java.time.LocalDate;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -27,19 +30,17 @@ import studentinfo.Model.Teacherinfo;
 public class SearchVeiwController implements Initializable {
 
     @FXML
-    private Text searchViewName;
+    private JFXTextField searchViewName;
     @FXML
     private Text searchViewRoll;
     @FXML
     private Text searchVeiwMobile;
     @FXML
     private Text searchViewAddress;
-    @FXML
     private JFXTextField searchById;
 
     StudentinfoDao sdao;
     TeacherinfoDao tdao;
-    @FXML
     private JFXTextField t_id;
     @FXML
     private Text searchViewName11;
@@ -49,6 +50,18 @@ public class SearchVeiwController implements Initializable {
     private Text searchVeiwMobile11;
     @FXML
     private Text searchViewAddress11;
+    @FXML
+    private Text searchViewId;
+    @FXML
+    private Text searchViewNameresult;
+    @FXML
+    private JFXTextField t_Name;
+    @FXML
+    private Text searchViewId11;
+    @FXML
+    private Text searchViewYear;
+    @FXML
+    private Text searchViewDate;
 
     /**
      * Initializes the controller class.
@@ -69,21 +82,26 @@ public class SearchVeiwController implements Initializable {
     @FXML
     private void searchByIdBtn(ActionEvent event) throws SQLException {
 
-        String id = searchById.getText().toString();
-        Student student = sdao.searchStudentInfo(id);
-        if (id.isEmpty()) {
-            Messages.showinfo("Please Enter Id First ...");
+        String name = searchViewName.getText();
+        Student student = sdao.searchStudentInfo(name);
+        if (name.isEmpty()) {
+            Messages.showinfo("Please Enter Name First ...");
         }
+        
+     
+     
 
         if (student != null) {
 
-            searchViewName.setText(student.getName());
+            searchViewNameresult.setText(student.getName());
+            searchViewId.setText(student.getId());
             searchViewRoll.setText(student.getRoll());
             searchVeiwMobile.setText(student.getMobile());
             searchViewAddress.setText(student.getAddress());
+            searchViewYear.setText(student.getDate().toString());
 
         } else {
-            Messages.showinfo("Can't find Any Student for this id ..");
+            Messages.showinfo("Can't find Any Student for this Name ..");
             clearStudentView();
         }
 
@@ -91,39 +109,43 @@ public class SearchVeiwController implements Initializable {
 
     @FXML
     private void searchTeacher(ActionEvent event) throws SQLException {
-        String t_id = this.t_id.getText().toString();
-        
-         Teacherinfo tinfo = tdao.searchTearchInfo(t_id);
-         if(t_id.isEmpty()){
-             Messages.showinfo("Please Enter Teacher Id");
-         }
+        String t_Name = this.t_Name.getText().toString();
+
+        Teacherinfo tinfo = tdao.searchTearchInfo(t_Name);
+        if (t_Name.isEmpty()) {
+            Messages.showinfo("Please Enter Teacher Name");
+        }
 
         if (tinfo != null) {
+            searchViewId11.setText(tinfo.getId());
             searchViewName11.setText(tinfo.getName());
             searchViewRoll11.setText(tinfo.getRoll());
             searchVeiwMobile11.setText(tinfo.getMobile());
             searchViewAddress11.setText(tinfo.getAddress());
-        }
-        else {
+            searchViewDate.setText(tinfo.getDate().toString());
+        } else {
             Messages.showinfo("Can't find Any Teacher for this id ..");
             clearTeacherView();
         }
     }
-    
-    public void clearStudentView(){
-        searchViewName.setText("---");
+
+    public void clearStudentView() {
+        searchViewNameresult.setText("---");
         searchViewRoll.setText("---");
         searchVeiwMobile.setText("---");
         searchViewAddress.setText("---");
-        
+        searchViewYear.setText("---");
+
     }
-     public void clearTeacherView(){
+
+    public void clearTeacherView() {
+        searchViewId11.setText("---");
         searchViewName11.setText("---");
         searchViewRoll11.setText("---");
         searchVeiwMobile11.setText("---");
         searchViewAddress11.setText("---");
-        
-    }
+        searchViewDate.setText("---");
 
+    }
 
 }
